@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jQuery.js"></script> 
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+    
+    <div >
+        <img src="images/ca1.jpg" class="thumb-img">
+        <img src="images/ca2.jpg" class="thumb-img">
+        <img src="images/ca1.jpg" class="thumb-img">
+        <img src="images/ca2.jpg" class="thumb-img">
+       
+
+
+
+    </div>
+<div class="lightbox-dark"></div>
+<div class="lightbox">
+    <div class="close-btn"> X </div>
+    <div class="left-btn"><</div>
+    <div class="right-btn">></div>
+    <img id="light-img" class="big-img" src="images/ca1.jpg">
+    
+
+     <div >
+        <img src="images/ca1.jpg" class="thumb-img-light">
+        <img src="images/ca2.jpg" class="thumb-img-light">
+        <img src="images/ca1.jpg" class="thumb-img-light">
+        <img src="images/ca2.jpg" class="thumb-img-light">
+        
+
+
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+
+            $(".thumb-img").click(function() {
+                $("#light-img").attr("src",$(this).attr("src"));
+                //$(".lightbox-dark ,.lightbox").css("display","block");
+                $(".lightbox-dark ,.lightbox").fadeIn(500);
+
+            });
+            $(".close-btn , .lightbox-dark") .click(function() {
+                $(".lightbox-dark ,.lightbox").fadeOut(500);
+            });
+            $(".thumb-img > .left-btn").click(function () {
+                    //$("thumb-img-light").animate({left : "260px"});
+                    //alert( $("#light-img").attr("src"));
+                    $(this).siblings().prev().show();
+
+                });
+
+
+
+        });
+</script>
+</body>
+</html>
